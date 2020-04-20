@@ -1,6 +1,6 @@
 Light_ZouUploader
 ===========
-2020-04-14
+2020-04-14 -> 2020-04-20
 
 
 
@@ -44,6 +44,10 @@ Summary
 History Log
 =============
 
+- 1.1.0 -- 2020-04-20
+
+    - add the move option 
+    
 - 1.0.0 -- 2020-04-14
 
     - initial commit

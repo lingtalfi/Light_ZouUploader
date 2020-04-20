@@ -4,7 +4,7 @@
 
 The ZouUploader class
 ================
-2020-04-14 --> 2020-04-14
+2020-04-14 --> 2020-04-20
 
 
 
@@ -56,6 +56,10 @@ Properties
     - override: bool=false
          If the uploaded file is going to override an existing file, the operation is rejected by default.
          Set this to true to allow file overrides.
+    - move: bool=true
+         Whether to copy the uploaded file to the destination, or to move it.
+         This is done at the end of the upload, when the file is fully uploaded.
+         By default, when the file is moved. Set this to false to make a copy instead.
     
     
 

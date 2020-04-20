@@ -54,7 +54,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [ZouUploader::error](https://github.com/lingtalfi/Light_ZouUploader/blob/master/ZouUploader.php#L161-L164)
+See the source code for method [ZouUploader::error](https://github.com/lingtalfi/Light_ZouUploader/blob/master/ZouUploader.php#L180-L183)
 
 
 See Also

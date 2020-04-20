@@ -25,6 +25,10 @@ class ZouUploader
      * - override: bool=false
      *      If the uploaded file is going to override an existing file, the operation is rejected by default.
      *      Set this to true to allow file overrides.
+     * - move: bool=true
+     *      Whether to copy the uploaded file to the destination, or to move it.
+     *      This is done at the end of the upload, when the file is fully uploaded.
+     *      By default, when the file is moved. Set this to false to make a copy instead.
      *
      *
      *
@@ -76,6 +80,8 @@ class ZouUploader
     public function isUploaded(HttpRequestInterface $request): bool
     {
         $override = $this->options['override'] ?? false;
+        $useMove = $this->options['move'] ?? true;
+
         if (false === $override && file_exists($this->destinationPath)) {
             $this->error("The file " . basename($this->destinationPath) . " already exists on the server.");
         }
@@ -96,11 +102,20 @@ class ZouUploader
         //--------------------------------------------
         if (false === $useChunks) {
             // since the phpFile has already been checked, nothing left to do
-            if (true === FileSystemTool::copyFile($phpFile['tmp_name'], $this->destinationPath)) {
-                return true;
+            if (true === $useMove) {
+                if (true === FileSystemTool::move($phpFile['tmp_name'], $this->destinationPath)) {
+                    return true;
+                } else {
+                    $this->error("An error occurred, could not move the file " . $phpFile['name']);
+                }
             } else {
-                $this->error("An error occurred with the copy of the file " . $phpFile['name']);
+                if (true === FileSystemTool::copyFile($phpFile['tmp_name'], $this->destinationPath)) {
+                    return true;
+                } else {
+                    $this->error("An error occurred with the copy of the file " . $phpFile['name']);
+                }
             }
+
         } else {
             //--------------------------------------------
             // CHUNK UPLOAD
@@ -136,7 +151,11 @@ class ZouUploader
 
 
             if (true === $isLastChunk) {
-                FileSystemTool::copyFile($dstPartial, $dst);
+                if (true === $useMove) {
+                    FileSystemTool::move($dstPartial, $dst);
+                } else {
+                    FileSystemTool::copyFile($dstPartial, $dst);
+                }
                 unlink($dstPartial);
                 return true;
             }

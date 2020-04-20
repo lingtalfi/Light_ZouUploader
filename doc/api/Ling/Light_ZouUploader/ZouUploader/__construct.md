@@ -46,7 +46,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [ZouUploader::__construct](https://github.com/lingtalfi/Light_ZouUploader/blob/master/ZouUploader.php#L39-L43)
+See the source code for method [ZouUploader::__construct](https://github.com/lingtalfi/Light_ZouUploader/blob/master/ZouUploader.php#L43-L47)
 
 
 See Also

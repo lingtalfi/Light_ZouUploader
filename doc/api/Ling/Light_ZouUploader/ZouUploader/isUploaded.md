@@ -57,7 +57,7 @@ Exceptions thrown
 
 Source Code
 ===========
-See the source code for method [ZouUploader::isUploaded](https://github.com/lingtalfi/Light_ZouUploader/blob/master/ZouUploader.php#L76-L148)
+See the source code for method [ZouUploader::isUploaded](https://github.com/lingtalfi/Light_ZouUploader/blob/master/ZouUploader.php#L80-L167)
 
 
 See Also

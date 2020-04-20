@@ -49,7 +49,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [ZouUploader::setOptions](https://github.com/lingtalfi/Light_ZouUploader/blob/master/ZouUploader.php#L60-L63)
+See the source code for method [ZouUploader::setOptions](https://github.com/lingtalfi/Light_ZouUploader/blob/master/ZouUploader.php#L64-L67)
 
 
 See Also

@@ -49,7 +49,7 @@ Returns void.
 
 Source Code
 ===========
-See the source code for method [ZouUploader::setDestinationPath](https://github.com/lingtalfi/Light_ZouUploader/blob/master/ZouUploader.php#L50-L53)
+See the source code for method [ZouUploader::setDestinationPath](https://github.com/lingtalfi/Light_ZouUploader/blob/master/ZouUploader.php#L54-L57)
 
 
 See Also
