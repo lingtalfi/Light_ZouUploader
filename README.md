@@ -44,6 +44,10 @@ Summary
 History Log
 =============
 
+- 1.1.1 -- 2020-04-20
+
+    - fix ZouUploader->isUploaded trying to unlink the file with move option 
+    
 - 1.1.0 -- 2020-04-20
 
     - add the move option 

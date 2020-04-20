@@ -155,8 +155,8 @@ class ZouUploader
                     FileSystemTool::move($dstPartial, $dst);
                 } else {
                     FileSystemTool::copyFile($dstPartial, $dst);
+                    unlink($dstPartial);
                 }
-                unlink($dstPartial);
                 return true;
             }
 
